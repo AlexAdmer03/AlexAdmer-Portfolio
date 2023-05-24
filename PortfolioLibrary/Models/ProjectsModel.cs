@@ -1,4 +1,6 @@
-﻿namespace PortfolioAPI.Models
+﻿using PortfolioLibrary.Models;
+
+namespace PortfolioAPI.Models
 {
     public class ProjectsModel
     {
@@ -12,6 +14,7 @@
         public string GithubURL { get; set; }
         public string Image { get; set; }
         public string Category { get; set; }
+        public SystemStructureModel SystemStructure { get; set; } 
         public List<string> TeamMembers { get; set; }
         public List<string> Features { get; set; }
     }
