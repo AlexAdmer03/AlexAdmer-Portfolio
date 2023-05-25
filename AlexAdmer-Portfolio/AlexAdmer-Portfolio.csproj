@@ -7,8 +7,4 @@
     <RootNamespace>AlexAdmer_Portfolio</RootNamespace>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Folder Include="wwwroot\assets\IMG\" />
-  </ItemGroup>
-
 </Project>
