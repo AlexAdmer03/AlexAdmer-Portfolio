@@ -16,15 +16,15 @@ namespace PortfolioAPI.Controllers
                 CreatedDate = new DateTime(21 - 03 - 2023),
                 LastUptade = new DateTime(23 - 05 - 2023),
                 Description =
-                    "Bank System Administration Web Application This web application was developed as part of a " +
-                    ".NET Web Development course assignment." +
-                    " It is a banking system administration tool implemented using ASP.NET Core." +
-                    " It enables efficient management of bank customers, their accounts, balances, and transactions.",
+                    "Bank System Administration Web Application Detta webbprogram utvecklades som en del av en " +
+                    ".NET Webbutvecklingskursuppgift." +
+                    " Det är ett verktyg för administration av banksystem implementerat med ASP.NET Core." +
+                    " Det möjliggör effektiv hantering av bankkunder, deras konton, saldon och transaktioner.",
                 Author = "Alex Admér",
                 PreviewURL = "", //!!!!!!!!!!!!!!!!
                 GithubURL = "https://github.com/AlexAdmer03/RabbitBank",
                 Image = "https://imgur.com/a/BTo5dnF",
-                Category = "Web application",
+                Category = "Web applikation",
                 SystemStructure = new SystemStructureModel
                 {
                     ProgrammingLanguages = new List<string> { "c#", "css", "html", "javascript", },
@@ -96,25 +96,77 @@ namespace PortfolioAPI.Controllers
             {
                 ProjectId = 2,
                 ProjectName = "FIXXO",
-                CreatedDate = new DateTime(09-03-2023),
-                LastUptade = new DateTime(17-03-2023),
-                Description = "In this individual project, the task is to build two pages for an e-commerce website called Fixxo. " +
-                              "The project provides a design file in XD format, which can be opened with Adobe XD or Sketch. " +
-                              "The goal is to implement the design of the Home and Contacts pages, making necessary design decisions due to deviations from standard web design practices. " +
-                              "The website can be built using static HTML files or technologies like React. To pass the project, all components on the Home and Contacts pages need to be implemented with a good code structure," +
-                              " utilizing flexbox and CSS grid where appropriate. Buttons and links should have animations or transitions. To achieve a higher grade, SCSS should be used for structuring CSS, the contact form should be validated using JavaScript with appropriate error messages, " +
-                              "and the form data should be submitted to a provided web API, displaying a confirmation message." +
-                              " Additionally, the Home page should display products retrieved from another provided web API.",
+                CreatedDate = new DateTime(09 - 03 - 2023),
+                LastUptade = new DateTime(17 - 03 - 2023),
+                Description =
+                    "I detta individuella projekt är uppgiften att bygga två sidor (Homepage & Contact page) för en e-handelswebbplats som heter Fixxo. " +
+                    "Projektet tillhandahåller en designfil i XD-format, som kan öppnas med Adobe XD eller Sketch. " +
+                    "Målet är att implementera designen för startsidan och kontaktsidan, och göra nödvändiga designbeslut på grund av avvikelser från standardpraxis för webbdesign. " +
+                    "Webbplatsen kan byggas med statiska HTML-filer eller teknologier som React. För att klara projektet måste alla komponenter på startsidan och kontaktsidan implementeras med en bra kodstruktur," +
+                    " utnyttja flexbox och CSS-grid där det är lämpligt. Knappar och länkar bör ha animationer eller övergångar. För att få ett högre betyg bör SCSS användas för att strukturera CSS, " +
+                    "kontaktformuläret bör valideras med JavaScript med lämpliga felmeddelanden, och formulärdata bör skickas till en tillhandahållen webb-API som visar ett bekräftelsemeddelande. " +
+                    "Ytterligare ska startsidan visa produkter som hämtas från ett annat tillhandahållet webb-API.",
                 Author = "Alex Admér",
-                PreviewURL = "",//!!!!!!!!!!!!!!!!!!!!!!!!!!!
+                PreviewURL = "", //!!!!!!!!!!!!!!!!!!!!!!!!!!!
                 GithubURL = "https://github.com/AlexAdmer03/FIXXO-Assignment",
                 Image = "https://imgur.com/a/ARihHFj",
-                Category = "Frontend project",
+                Category = "Frontend projekt",
                 SystemStructure = new SystemStructureModel
                 {
-                    ProgrammingLanguages = new List<string> { "css", "html", "scss", },
+                    ProgrammingLanguages = new List<string> { "css", "html", "scss", "Javascript" },
                     Platforms = new List<string> { "" },
-                    Tools = new List<string> { "Github", "Visual code"},
+                    Tools = new List<string> { "Github", "Visual code" },
+                }
+            },
+            new ProjectsModel
+            {
+                ProjectId = 3,
+                ProjectName = "Annons Web-API",
+                CreatedDate = new DateTime(20 - 04 - 2023),
+                LastUptade = new DateTime(16 - 05 - 2023),
+                Description =
+                    "Det här projektet handlar om att skapa en .NET WebAPI (RESTful) för att hantera annonser. API:et ska använda ASP.NET Core och databasen ska vara SQL Server implementerad med Code First. " +
+                    "API:et ska vara RESTful och stödja olika HTTP-metoder för att utföra olika åtgärder på annonserna, inklusive GET för att lista alla annonser, GET med ett specifikt ID för att lista en enskild annons, " +
+                    "POST för att skapa en ny annons, DELETE för att ta bort en annons och PUT för att uppdatera en annons (total uppdatering). Korrekta HTTP-statuskoder ska returneras för varje åtgärd.",
+                Author = "Alex Admér",
+                PreviewURL = "", //!!!!!!!!!!!!!!!!
+                GithubURL = "https://github.com/AlexAdmer03/Api-Advert-assignment/tree/master",
+                Image = "https://imgur.com/a/DFwT1Z7",
+                Category = "API",
+                SystemStructure = new SystemStructureModel
+                {
+                    ProgrammingLanguages = new List<string> { "C#" },
+                    FrameworksAndLibraries = new List<string> { "Entity Framework" },
+                    Platforms = new List<string> { "Swagger" },
+                    Tools = new List<string> { "Visual studio", "ASP .NET Core Web API" },
+                    Databases = new List<DatabaseModel>
+                    {
+                        new DatabaseModel
+                        {
+                            Name = "AdvertAPI",
+                            Type = "SQL-Database",
+                            Version = "18. 12. 1",
+                            HostName = "Local Host",
+                            Tables = new List<string>
+                            {
+                                "dbo.__EFMigrationsHistory",
+                                "dbo.AdDbSet"
+                            }
+                        }
+                    },
+                    Api = new List<ApiModel>
+                    {
+                        new ApiModel
+                        {
+                            Name = "Annons Web-API",
+                            Description =
+                                "Det här projektet handlar om att skapa en .NET WebAPI (RESTful) för att hantera annonser. API:et ska använda ASP.NET Core och databasen ska vara SQL Server implementerad med Code First. " +
+                                "API:et ska vara RESTful och stödja olika HTTP-metoder för att utföra olika åtgärder på annonserna, inklusive GET för att lista alla annonser, GET med ett specifikt ID för att lista en enskild annons, " +
+                                "POST för att skapa en ny annons, DELETE för att ta bort en annons och PUT för att uppdatera en annons (total uppdatering). Korrekta HTTP-statuskoder ska returneras för varje åtgärd.",
+                            URL = "https://localhost:7277/swagger/index.html",
+                            Type = "Web-API"
+                        }
+                    }
                 }
             }
 
