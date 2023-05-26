@@ -2,32 +2,33 @@
 @model IndexModel
 
 
-<section class="page-section" id="LandingPage" style="border: 1px solid white;">
+<section class="page-section" id="LandingPage">
     <div class="container">
         <div class="NameSign">
-            <span>ALEX ADMÉR</span>
-            <span>ALEX ADMÉR</span>
+            <span style="font-size: 50px;">ALEX ADMÉR</span>
+            <span style="font-size: 50px;">ALEX ADMÉR</span>
         </div>
         <h5 id="nametext">portfolio</h5>
         <h2 id="TextUnderName">I'm a future <span>.NET Developer</span> from Stockholm, Sweden</h2>
 
         <div id="Contentcontainer">
-            <div class="card">
-                <div class="card-info">
+            <div class="containercard">
+                <div class="card-info cardbg">
                     <a href="#" class="glow-button" role="button">About</a>
                 </div>
+                
             </div>
-            <div class="card">
+            <div class="containercard">
                 <div class="card-info">
                     <a href="#" class="glow-button" role="button">Projects</a>
                 </div>
             </div>
-            <div class="card">
+            <div class="containercard">
                 <div class="card-info">
                     <a href="#" class="glow-button" role="button">Button</a>
                 </div>
             </div>
-            <div class="card">
+            <div class="containercard">
                 <div class="card-info">
                     <a href="#" class="glow-button" role="button">Button</a>
                 </div>
@@ -37,12 +38,67 @@
 
 </section>
 
-<section class="page-section" id="about" style="border: 1px solid white;">
+<section class="page-section" id="about">
     <div class="container">
+
+        <div class="NameSign">
+            <span id="abouttitle">About Me</span>
+            <span id="abouttitle">About Me</span>
+        </div>
+        <div id="aboutme-content">
+            
+            @*1*@
+            <div class="card-container">
+                <div class="card">
+                    <div class="front-content">
+                        <p>Hover me</p>
+                    </div>
+                    <div class="content">
+                        <p class="heading">Card Hover</p>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipii
+                            voluptas ten mollitia pariatur odit, ab
+                            minus ratione adipisci accusamus vel est excepturi laboriosam magnam
+                            necessitatibus dignissimos molestias.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            @*2*@
+            <div class="midcard">
+                <div class="first-content">
+                    <span></span>
+                </div>
+                <div class="second-content">
+                    <span>benim e single walla... 072 965 65 59</span>
+                </div>
+            </div>
+            
+            @*3*@
+            <div class="card-container">
+                <div class="card">
+                    <div class="front-content">
+                        <p>Hover me</p>
+                    </div>
+                    <div class="content">
+                        <p class="heading">Card Hover</p>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipii
+                            voluptas ten mollitia pariatur odit, ab
+                            minus ratione adipisci accusamus vel est excepturi laboriosam magnam
+                            necessitatibus dignissimos molestias.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
     </div>
 </section>
 
 <section class="page-section" id="Projects">
-    <div class="container" style="border: 1px solid white;">
+    <div class="container">
     </div>
 </section>

@@ -41,84 +41,160 @@ body {
 
 /*NAVBAR----------------------*/
 
-
-.navbar {
-    transition: background-color 0.5s ease;
-    display: flex;
-    justify-content: center;
+.navbar-container {
+    background-color: black;
     border-bottom: 2px solid #80c6ff;
     border-top: 2px solid #80c6ff;
     box-shadow: 0px 0px 25px -2px #80c6ff;
+    position: fixed;
+    top: 30px;
+    left: 0;
+    width: 100%;
+    z-index: 2;
+}
 
-    &.navbar-scroll {
-        background-color: #FFFFFF;
-    }
+.Navbar-contents {
+    text-decoration: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin: 0px 11.5%;
+    padding: 15px 100px;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 22px;
+    color: #FFF1F4;
+    white-space: nowrap;
 
-    &.navbar-top {
-        background-color: transparent;
-    }
 
     .button {
         display: flex;
     }
+}
 
-    .box {
-        width: 35px;
-        height: 40px;
+.box {
+    width: 35px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+    font-weight: 700;
+    color: #fff;
+    transition: all .8s;
+    cursor: pointer;
+    position: relative;
+    background: rgb(58, 165, 253);
+    overflow: hidden;
+
+    &:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        background: #353564;
+        width: 100%;
+        height: 100%;
         display: flex;
-        justify-content: center;
         align-items: center;
-        font-size: 15px;
-        font-weight: 700;
-        color: #fff;
-        transition: all .8s;
-        cursor: pointer;
-        position: relative;
-        background: rgb(58, 165, 253);
-        overflow: hidden;
-
-        &:before {
-            content: "";
-            position: absolute;
-            top: 0;
-            background: #353564;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transform: translateY(100%);
-            transition: transform .4s;
-        }
-
-        &:nth-child(1)::before {
-            content: 'A';
-        }
-
-        &:nth-child(2)::before {
-            transform: translateY(-100%);
-            content: 'D';
-        }
-
-        &:nth-child(3)::before {
-            content: 'M';
-        }
-
-        &:nth-child(4)::before {
-            transform: translateY(-100%);
-            content: 'E';
-        }
-
-        &:nth-child(5)::before {
-            content: 'R';
-        }
+        justify-content: center;
+        transform: translateY(100%);
+        transition: transform .4s;
     }
 
-    .button:hover {
-        .box:before {
-            transform: translateY(0);
-        }
+    &:nth-child(1)::before {
+        content: 'A';
     }
+
+    &:nth-child(2)::before {
+        transform: translateY(-100%);
+        content: 'D';
+    }
+
+    &:nth-child(3)::before {
+        content: 'M';
+    }
+
+    &:nth-child(4)::before {
+        transform: translateY(-100%);
+        content: 'E';
+    }
+
+    &:nth-child(5)::before {
+        content: 'R';
+    }
+}
+
+.button:hover {
+    .box:before {
+        transform: translateY(0);
+    }
+}
+
+.c-button {
+    color: #000;
+    font-weight: 900;
+    font-size: 12px;
+    text-decoration: none;
+    padding: 0.8em 1.4em;
+    cursor: pointer;
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    z-index: 1;
+}
+
+.c-button--gooey {
+    color: #06c8d9;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border: 4px solid #06c8d9;
+    border-radius: 0;
+    position: relative;
+    transition: all 700ms ease;
+}
+
+.c-button--gooey .c-button__blobs {
+    height: 100%;
+    filter: url(#goo);
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: -3px;
+    right: -1px;
+    z-index: -1;
+}
+
+.c-button--gooey .c-button__blobs div {
+    background-color: #06c8d9;
+    width: 34%;
+    height: 100%;
+    border-radius: 100%;
+    position: absolute;
+    transform: scale(1.4) translateY(125%) translateZ(0);
+    transition: all 700ms ease;
+}
+
+.c-button--gooey .c-button__blobs div:nth-child(1) {
+    left: -5%;
+}
+
+.c-button--gooey .c-button__blobs div:nth-child(2) {
+    left: 30%;
+    transition-delay: 60ms;
+}
+
+.c-button--gooey .c-button__blobs div:nth-child(3) {
+    left: 66%;
+    transition-delay: 25ms;
+}
+
+.c-button--gooey:hover {
+    color: #fff;
+}
+
+.c-button--gooey:hover .c-button__blobs div {
+    transform: scale(1.4) translateY(0) translateZ(0);
 }
 
 /*LANDING PAGE-------------------*/
@@ -186,15 +262,14 @@ $btn-color: darken($main-color, 20%);
     padding-top: 5%;
     display: flex;
     justify-content: center;
-    gap: 5%;
+    gap: 20px;
 
-    .card {
+    .containercard {
         $background: linear-gradient(to left, $main-color 0%, darken($main-color, 20%) 100%);
-        width: 190px;
-        height: 254px;
+        width: 300px;
+        height: 300px;
         padding: 5px;
         border-radius: 1rem;
-        overflow: visible;
         background: $main-color;
         background: $background;
         position: relative;
@@ -238,7 +313,6 @@ $btn-color: darken($main-color, 20%);
         align-items: center;
         width: 100%;
         height: 100%;
-        overflow: visible;
         border-radius: .7rem;
         overflow: hidden;
     }
@@ -288,4 +362,199 @@ $btn-color: darken($main-color, 20%);
             box-shadow: 0 0 0.6em .25em $glow-color, 0 0 2.5em 2em $glow-spread-color, inset 0 0 .5em .25em $glow-color;
         }
     }
+
+    /*.cardbg{
+        background: url(../assets/img/blurry-BG.jpg) no-repeat;
+        background-size: cover;
+    }*/
+
+}
+
+#about {
+    position: relative;
+    box-shadow: 0px 0px 25px -2px #80c6ff;
+    overflow: hidden;
+}
+
+#about::after {
+    content: "";
+    background: url("../assets/img/blurry-BG.jpg") no-repeat center center;
+    background-size: cover;
+    opacity: 0.6;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
+}
+
+#abouttitle {
+    font-size: 50px;
+    margin-bottom: 50px;
+    border-bottom: 1px solid #80c6ff;
+}
+
+#aboutme-content {
+    display: flex;
+    justify-content: center;
+    padding-top: 15%;
+    gap: 10px;
+}
+
+/*2st*/
+
+.midcard {
+    width: 420px;
+    height: 420px;
+    background: url("../assets/img/benim-cutout.png") no-repeat;
+    background-size: cover;
+    background-position: 30% 70%;
+    transition: all 0.4s;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.705);
+    font-size: 30px;
+    font-weight: 900;
+
+    &:hover {
+        border-radius: 15px;
+        cursor: pointer;
+        box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.705);
+        background: rgb(103, 151, 255);
+
+        .first-content {
+            height: 0px;
+            opacity: 0;
+        }
+
+        .second-content {
+            opacity: 1;
+            height: 100%;
+            font-size: 1.8rem;
+            transform: rotate(0deg);
+        }
+    }
+
+    .first-content {
+        height: 100%;
+        width: 100%;
+        transition: all 0.4s;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        opacity: 1;
+        border-radius: 15px;
+    }
+
+    .second-content {
+        height: 0%;
+        width: 100%;
+        opacity: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 15px;
+        transition: all 0.4s;
+        font-size: 0px;
+        transform: rotate(90deg) scale(-1);
+    }
+}
+
+/*3nd*/
+$main-color: #80c6ff;
+
+.card-container {
+    width: 420px;
+    height: 420px;
+    position: relative;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    background: url(../assets/img/blurry-BG.jpg);
+    background-size: cover;
+
+
+    .card {
+        width: 100%;
+        height: 100%;
+        border-radius: inherit;
+
+        .front-content,
+        .content {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+        }
+
+        .front-content {
+            p {
+                font-size: 32px;
+                font-weight: 700;
+                opacity: 1;
+                background: $main-color;
+                background-clip: text;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+            }
+        }
+
+        .content {
+            position: absolute;
+            top: 0;
+            left: 0;
+            flex-direction: column;
+            text-align: center;
+            gap: 10px;
+            background: $main-color;
+            color: #e8e8e8;
+            padding: 20px;
+            line-height: 1.5;
+            border-radius: 5px;
+            pointer-events: none;
+            transform: translateY(96%);
+
+            .heading {
+                font-size: 32px;
+                font-weight: 700;
+            }
+        }
+
+        &:hover {
+            .content {
+                transform: translateY(0);
+            }
+
+            .front-content {
+                transform: translateY(-30%);
+
+                p {
+                    opacity: 0;
+                }
+            }
+        }
+    }
+}
+
+/*PROJECTS--------------*/
+#Projects {
+    position: relative;
+    box-shadow: 0px 0px 25px -2px #80c6ff;
+    overflow: hidden;
+}
+
+#Projects::after {
+    content: "";
+    background: url("../assets/img/blurry-BGpurp.jpg") no-repeat center center;
+    background-size: cover;
+    opacity: 0.6;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
 }
