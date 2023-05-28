@@ -5,6 +5,10 @@ using PortfolioLibrary.Models;
 
 namespace PortfolioAPI.Controllers
 {
+
+    [Route("api/[controller]")]
+    [ApiController]
+
     public class PortfolioController : Controller
     {
         private static List<ProjectsModel> Projects = new List<ProjectsModel>
@@ -13,8 +17,8 @@ namespace PortfolioAPI.Controllers
             {
                 ProjectId = 1,
                 ProjectName = "Rabbit Bank",
-                CreatedDate = new DateTime(21 - 03 - 2023),
-                LastUptade = new DateTime(23 - 05 - 2023),
+                CreatedDate = new DateTime(2023, 03, 21),
+                LastUptade = new DateTime(2023, 05, 23),
                 Description =
                     "Bank System Administration Web Application Detta webbprogram utvecklades som en del av en " +
                     ".NET Webbutvecklingskursuppgift." +
@@ -96,8 +100,8 @@ namespace PortfolioAPI.Controllers
             {
                 ProjectId = 2,
                 ProjectName = "FIXXO",
-                CreatedDate = new DateTime(09 - 03 - 2023),
-                LastUptade = new DateTime(17 - 03 - 2023),
+                CreatedDate = new DateTime(2023, 03, 09),
+                LastUptade = new DateTime(2023, 03, 17),
                 Description =
                     "I detta individuella projekt är uppgiften att bygga två sidor (Homepage & Contact page) för en e-handelswebbplats som heter Fixxo. " +
                     "Projektet tillhandahåller en designfil i XD-format, som kan öppnas med Adobe XD eller Sketch. " +
@@ -122,8 +126,8 @@ namespace PortfolioAPI.Controllers
             {
                 ProjectId = 3,
                 ProjectName = "Annons Web-API",
-                CreatedDate = new DateTime(20 - 04 - 2023),
-                LastUptade = new DateTime(16 - 05 - 2023),
+                CreatedDate = new DateTime(2023, 04, 20),
+                LastUptade = new DateTime(2023, 05, 16),
                 Description =
                     "Det här projektet handlar om att skapa en .NET WebAPI (RESTful) för att hantera annonser. API:et ska använda ASP.NET Core och databasen ska vara SQL Server implementerad med Code First. " +
                     "API:et ska vara RESTful och stödja olika HTTP-metoder för att utföra olika åtgärder på annonserna, inklusive GET för att lista alla annonser, GET med ett specifikt ID för att lista en enskild annons, " +
