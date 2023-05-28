@@ -34,6 +34,12 @@ body::before {
   }
 }
 
+#title {
+  font-size: 50px;
+  margin-bottom: 50px;
+  border-bottom: 1px solid #80c6ff;
+}
+
 .page-section {
   height: 100vh;
 }
@@ -188,7 +194,7 @@ body::before {
 /*LANDING PAGE-------------------*/
 .NameSign {
   text-align: center;
-  padding-top: 20%;
+  padding-top: 15%;
   position: relative;
 }
 .NameSign span {
@@ -235,7 +241,7 @@ body::before {
 }
 
 #Contentcontainer {
-  padding-top: 5%;
+  padding-top: 10%;
   display: flex;
   justify-content: center;
   gap: 20px;
@@ -350,16 +356,10 @@ body::before {
   z-index: -1;
 }
 
-#abouttitle {
-  font-size: 50px;
-  margin-bottom: 50px;
-  border-bottom: 1px solid #80c6ff;
-}
-
 #aboutme-content {
   display: flex;
   justify-content: center;
-  padding-top: 15%;
+  padding-top: 20%;
   gap: 10px;
 }
 
@@ -423,8 +423,6 @@ body::before {
   border-radius: 10px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
   overflow: hidden;
-  background: url(../assets/img/blurry-BG.jpg);
-  background-size: cover;
 }
 .card-container .card {
   width: 100%;
@@ -515,7 +513,7 @@ body::before {
 
 #Projects::after {
   content: "";
-  background: url("../assets/img/blurry-BGpurp.jpg") no-repeat center center;
+  background: url("../assets/img/blurry-BG.jpg") no-repeat center center;
   background-size: cover;
   opacity: 0.6;
   top: 0;
@@ -529,7 +527,7 @@ body::before {
 .projectcontainer {
   display: flex;
   justify-content: center;
-  padding-top: 10%;
+  padding-top: 15%;
   gap: 15px;
 }
 .projectcontainer .card {
@@ -624,7 +622,7 @@ body::before {
 
 #skills::after {
   content: "";
-  background: url("../assets/img/blurry-BGgreen.jpg") no-repeat center center;
+  background: url("../assets/img/blurry-BG.jpg") no-repeat center center;
   background-size: cover;
   opacity: 0.6;
   top: 0;
@@ -635,58 +633,28 @@ body::before {
   z-index: -1;
 }
 
-.skillsNameSign {
-  text-align: center;
-  padding-top: 20%;
-  position: relative;
-}
-.skillsNameSign span {
-  position: absolute;
-  color: #fff;
-  transform: translate(-50%, -50%);
-  font-size: 50px;
-  letter-spacing: 5px;
-}
-.skillsNameSign span:nth-child(1) {
-  color: #fff;
-  -webkit-text-stroke: 0.3px #413c6c;
-}
-.skillsNameSign span:nth-child(2) {
-  color: #7ec65f;
-  -webkit-text-stroke: 1px #7067b9;
-  animation: uiverse723 3s ease-in-out infinite;
-}
-.skillsNameSign #skillstitle {
-  font-size: 50px;
-  margin-bottom: 50px;
-  border-bottom: 1px solid #7ec65f;
-}
-
 .skillscontainer {
-  display: grid;
-  align-items: center;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-  gap: 10px;
-  padding-top: 10%;
+  display: flex;
+  justify-content: center;
+  padding-top: 15%;
+  gap: 16px;
 }
-.skillscontainer .card-container {
-  width: 200px;
-  height: 200px;
+.skillscontainer .skillcard-container {
+  width: 300px;
+  height: 300px;
   position: relative;
   border-radius: 10px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
   overflow: hidden;
-  background: url(../assets/img/blurry-BG.jpg);
-  background-size: cover;
+  background: #FFF;
 }
-.skillscontainer .card-container .card {
+.skillscontainer .skillcard-container .skillcard {
   width: 100%;
   height: 100%;
   border-radius: inherit;
 }
-.skillscontainer .card-container .card .front-content,
-.skillscontainer .card-container .card .content {
+.skillscontainer .skillcard-container .skillcard .skillfront-content,
+.skillscontainer .skillcard-container .skillcard .skillcontent {
   width: 100%;
   height: 100%;
   display: flex;
@@ -694,42 +662,42 @@ body::before {
   justify-content: center;
   transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
 }
-.skillscontainer .card-container .card .front-content p {
+.skillscontainer .skillcard-container .skillcard .skillfront-content p {
   font-size: 32px;
   font-weight: 700;
   opacity: 1;
-  background: #7ec65f;
+  background: #80c6ff;
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
 }
-.skillscontainer .card-container .card .content {
+.skillscontainer .skillcard-container .skillcard .skillcontent {
   position: absolute;
   top: 0;
   left: 0;
   flex-direction: column;
   text-align: center;
   gap: 10px;
-  background: #7ec65f;
-  color: white;
+  background: #80c6ff;
+  color: #e8e8e8;
   padding: 20px;
   line-height: 1.5;
   border-radius: 5px;
   pointer-events: none;
   transform: translateY(96%);
 }
-.skillscontainer .card-container .card .content .heading {
+.skillscontainer .skillcard-container .skillcard .skillcontent .heading {
   font-size: 32px;
   font-weight: 700;
 }
-.skillscontainer .card-container .card:hover .content {
+.skillscontainer .skillcard-container .skillcard:hover .skillcontent {
   transform: translateY(0);
 }
-.skillscontainer .card-container .card:hover .front-content {
+.skillscontainer .skillcard-container .skillcard:hover .skillfront-content {
   transform: translateY(-30%);
 }
-.skillscontainer .card-container .card:hover .front-content p {
+.skillscontainer .skillcard-container .skillcard:hover .skillfront-content p {
   opacity: 0;
 }
 
@@ -742,7 +710,7 @@ body::before {
 
 #References::after {
   content: "";
-  background: url("../assets/img/blurry-BG-red.jpg") no-repeat center center;
+  background: url("../assets/img/blurry-BG.jpg") no-repeat center center;
   background-size: cover;
   opacity: 0.7;
   top: 0;
@@ -751,31 +719,4 @@ body::before {
   right: 0;
   position: absolute;
   z-index: -1;
-}
-
-.refNameSign {
-  text-align: center;
-  padding-top: 20%;
-  position: relative;
-}
-.refNameSign span {
-  position: absolute;
-  color: #fff;
-  transform: translate(-50%, -50%);
-  font-size: 50px;
-  letter-spacing: 5px;
-}
-.refNameSign span:nth-child(1) {
-  color: #fff;
-  -webkit-text-stroke: 0.3px #413c6c;
-}
-.refNameSign span:nth-child(2) {
-  color: #962b3d;
-  -webkit-text-stroke: 1px #962b3d;
-  animation: uiverse723 3s ease-in-out infinite;
-}
-.refNameSign #reftitle {
-  font-size: 50px;
-  margin-bottom: 50px;
-  border-bottom: 1px solid #e2405c;
 }

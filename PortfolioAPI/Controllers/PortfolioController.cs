@@ -171,10 +171,12 @@ namespace PortfolioAPI.Controllers
             }
 
         };
+        [HttpGet]
 
-        public IActionResult Index()
+        public async Task<ActionResult<List<ProjectsModel>>> GetAll()
         {
-            return View();
+            return Ok(Projects);
         }
+
     }
 }
