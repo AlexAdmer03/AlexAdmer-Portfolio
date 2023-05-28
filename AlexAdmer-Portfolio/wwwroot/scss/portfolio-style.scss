@@ -335,6 +335,7 @@ $btn-color: darken($main-color, 20%);
         outline: none;
         box-shadow: 0 0 1em .25em $glow-color, 0 0 4em 1em $glow-spread-color, inset 0 0 .75em .25em $glow-color;
         text-shadow: 0 0 .5em $glow-color;
+        text-decoration: none;
         position: relative;
         transition: all 0.3s;
 
@@ -362,13 +363,13 @@ $btn-color: darken($main-color, 20%);
             box-shadow: 0 0 0.6em .25em $glow-color, 0 0 2.5em 2em $glow-spread-color, inset 0 0 .5em .25em $glow-color;
         }
     }
-
     /*.cardbg{
         background: url(../assets/img/blurry-BG.jpg) no-repeat;
         background-size: cover;
     }*/
-
 }
+
+/*ABOUT----------------------*/
 
 #about {
     position: relative;
@@ -460,7 +461,7 @@ $btn-color: darken($main-color, 20%);
     }
 }
 
-/*3nd*/
+/*1st 3nd*/
 $main-color: #80c6ff;
 
 .card-container {
@@ -540,6 +541,38 @@ $main-color: #80c6ff;
 }
 
 /*PROJECTS--------------*/
+.projectNameSign {
+    text-align: center;
+    padding-top: 20%;
+    position: relative;
+
+    span {
+        position: absolute;
+        color: #fff;
+        transform: translate(-50%, -50%);
+        font-size: 50px;
+        letter-spacing: 5px;
+
+        &:nth-child(1) {
+            color: #fff;
+            -webkit-text-stroke: 0.3px #413c6c;
+        }
+
+        &:nth-child(2) {
+            color: #423d6d;
+            -webkit-text-stroke: 1px #7067b9;
+            animation: uiverse723 3s ease-in-out infinite;
+        }
+    }
+
+    #Projecttitle {
+        font-size: 50px;
+        margin-bottom: 50px;
+        border-bottom: 1px solid #7067b9;
+    }
+}
+
+
 #Projects {
     position: relative;
     box-shadow: 0px 0px 25px -2px #80c6ff;
@@ -557,4 +590,292 @@ $main-color: #80c6ff;
     right: 0;
     position: absolute;
     z-index: -1;
+}
+
+.projectcontainer {
+    display: flex;
+    justify-content: center;
+    padding-top: 10%;
+    gap: 15px;
+
+    .card {
+        width: 400px;
+        height: 400px;
+        background-image: linear-gradient(163deg, #7067b9 0%, #3700ff 100%);
+        border-radius: 20px;
+        transition: all .3s;
+
+        &:hover {
+            box-shadow: 0px 0px 30px 1px #7067b9;
+        }
+    }
+
+    .card1 {
+        width: 400px;
+        height: 400px;
+        background: url(../assets/img/Rabbitbank-SS.jpg) no-repeat;
+        background-size: cover;
+        background-position: center;
+        transition: all .2s;
+
+        &:hover {
+            transform: scale(0.95);
+            border-radius: 20px;
+        }
+    }
+
+    .card2 {
+        width: 400px;
+        height: 400px;
+        background: url(../assets/img/FixxoSS.jpg) no-repeat;
+        background-size: cover;
+        background-position: center;
+        transition: all .2s;
+
+        &:hover {
+            transform: scale(0.95);
+            border-radius: 20px;
+        }
+    }
+
+    .card3 {
+        width: 400px;
+        height: 400px;
+        background: url(../assets/img/API-IMAGE.jpg) no-repeat;
+        background-size: cover;
+        background-position: center;
+        transition: all .2s;
+
+        &:hover {
+            transform: scale(0.95);
+            border-radius: 20px;
+        }
+    }
+
+    .projectName {
+        text-align: center;
+        text-decoration: none;
+    }
+}
+
+/*MODAL*/
+
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    visibility: hidden;
+    opacity: 0;
+    background: #fff;
+    padding: 20px;
+    border-radius: 4px;
+    transition: all 0.3s ease-in-out;
+    z-index: 9999;
+}
+
+.modal:target {
+    visibility: visible;
+    opacity: 1;
+}
+
+.modal-close {
+    display: inline-block;
+    padding: 5px 10px;
+    background: #ccc;
+    color: #333;
+    border-radius: 4px;
+    text-decoration: none;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+
+/*SKILLS-----------------*/
+
+#skills {
+    position: relative;
+    box-shadow: 0px 0px 25px -2px #80c6ff;
+    overflow: hidden;
+}
+
+#skills::after {
+    content: "";
+    background: url("../assets/img/blurry-BGgreen.jpg") no-repeat center center;
+    background-size: cover;
+    opacity: 0.6;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
+}
+
+.skillsNameSign {
+    text-align: center;
+    padding-top: 20%;
+    position: relative;
+
+    span {
+        position: absolute;
+        color: #fff;
+        transform: translate(-50%, -50%);
+        font-size: 50px;
+        letter-spacing: 5px;
+
+        &:nth-child(1) {
+            color: #fff;
+            -webkit-text-stroke: 0.3px #413c6c;
+        }
+
+        &:nth-child(2) {
+            color: #7ec65f;
+            -webkit-text-stroke: 1px #7067b9;
+            animation: uiverse723 3s ease-in-out infinite;
+        }
+    }
+
+    #skillstitle {
+        font-size: 50px;
+        margin-bottom: 50px;
+        border-bottom: 1px solid #7ec65f;
+    }
+}
+
+
+.skillscontainer {
+    display: grid;
+    align-items:center;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 10px;
+    padding-top: 10%;
+
+    .card-container {
+        width: 200px;
+        height: 200px;
+        position: relative;
+        border-radius: 10px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        overflow: hidden;
+        background: url(../assets/img/blurry-BG.jpg);
+        background-size: cover;
+
+        .card {
+            width: 100%;
+            height: 100%;
+            border-radius: inherit;
+
+            .front-content,
+            .content {
+                width: 100%;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+            }
+
+            .front-content {
+                p {
+                    font-size: 32px;
+                    font-weight: 700;
+                    opacity: 1;
+                    background: #7ec65f;
+                    background-clip: text;
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+                }
+            }
+
+            .content {
+                position: absolute;
+                top: 0;
+                left: 0;
+                flex-direction: column;
+                text-align: center;
+                gap: 10px;
+                background: #7ec65f;
+                color: white;
+                padding: 20px;
+                line-height: 1.5;
+                border-radius: 5px;
+                pointer-events: none;
+                transform: translateY(96%);
+
+                .heading {
+                    font-size: 32px;
+                    font-weight: 700;
+                }
+            }
+
+            &:hover {
+                .content {
+                    transform: translateY(0);
+                }
+
+                .front-content {
+                    transform: translateY(-30%);
+
+                    p {
+                        opacity: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/*REFERENCES----------------------------------*/
+
+#References {
+    position: relative;
+    box-shadow: 0px 0px 25px -2px #80c6ff;
+    overflow: hidden;
+}
+
+#References::after {
+    content: "";
+    background: url("../assets/img/blurry-BG-red.jpg") no-repeat center center;
+    background-size: cover;
+    opacity: 0.7;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
+}
+
+.refNameSign {
+    text-align: center;
+    padding-top: 20%;
+    position: relative;
+
+    span {
+        position: absolute;
+        color: #fff;
+        transform: translate(-50%, -50%);
+        font-size: 50px;
+        letter-spacing: 5px;
+
+        &:nth-child(1) {
+            color: #fff;
+            -webkit-text-stroke: 0.3px #413c6c;
+        }
+
+        &:nth-child(2) {
+            color: #962b3d;
+            -webkit-text-stroke: 1px #962b3d;
+            animation: uiverse723 3s ease-in-out infinite;
+        }
+    }
+
+    #reftitle {
+        font-size: 50px;
+        margin-bottom: 50px;
+        border-bottom: 1px solid #e2405c;
+    }
 }
