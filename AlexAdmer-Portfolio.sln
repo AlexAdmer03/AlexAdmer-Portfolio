@@ -7,7 +7,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PortfolioAPI", "PortfolioAP
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PortfolioLibrary", "PortfolioLibrary\PortfolioLibrary.csproj", "{13B7EB4E-4C57-4800-B452-8FA7A2934249}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlexAdmer-Portfolio", "AlexAdmer-Portfolio\AlexAdmer-Portfolio.csproj", "{789B7B75-9466-4B79-BE89-E43A42E77A66}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AlexAdmer-Portfolio", "AlexAdmer-Portfolio\AlexAdmer-Portfolio.csproj", "{789B7B75-9466-4B79-BE89-E43A42E77A66}"
+	ProjectSection(ProjectDependencies) = postProject
+		{13B7EB4E-4C57-4800-B452-8FA7A2934249} = {13B7EB4E-4C57-4800-B452-8FA7A2934249}
+		{3714F186-60EC-4725-B792-7464E27E50B1} = {3714F186-60EC-4725-B792-7464E27E50B1}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

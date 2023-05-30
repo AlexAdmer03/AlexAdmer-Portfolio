@@ -1,20 +1,24 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using PortfolioAPI.Models;
+using PortfolioLibrary.Service;
 
 namespace AlexAdmer_Portfolio.Pages
 {
     public class IndexModel : PageModel
     {
-        private readonly ILogger<IndexModel> _logger;
-
-        public IndexModel(ILogger<IndexModel> logger)
+        private readonly IApiService _apiService;
+        public IndexModel(IApiService apiService)
         {
-            _logger = logger;
+            _apiService = apiService;
         }
 
-        public void OnGet()
-        {
+        public List<ProjectsModel> MyProjects { get; set; }
 
+        public async Task OnGetAsync()
+        {
+            MyProjects = await _apiService.GetAllProjectsAsync();
         }
+
     }
 }
