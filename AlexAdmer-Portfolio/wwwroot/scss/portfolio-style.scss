@@ -203,6 +203,79 @@ body {
     transform: scale(1.4) translateY(0) translateZ(0);
 }
 
+/*WEATHER BUTTON*/
+
+.weatherc {
+    color: #FFF;
+    font-weight: 900;
+    font-size: 12px;
+    width: 130px;
+    text-decoration: none;
+    padding: 0.8em 1.4em;
+    cursor: pointer;
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.weatherc-gooey {
+    color: #06c8d9;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border: 4px solid #06c8d9;
+    border-radius: 0;
+    position: relative;
+    transition: all 700ms ease;
+}
+
+.weatherc-gooey .weatherc_blobs {
+    height: 100%;
+    filter: url(#goo);
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: -3px;
+    right: -1px;
+    z-index: -1;
+}
+
+.weatherc-gooey .weatherc_blobs div {
+    background-color: #06c8d9;
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+    position: absolute;
+    transform: scale(1.4) translateY(125%) translateZ(0);
+    transition: all 700ms ease;
+}
+
+.weatherc-gooey .weatherc_blobs div:nth-child(1) {
+    left: -5%;
+}
+
+.weatherc-gooey .weatherc_blobs div:nth-child(2) {
+    left: 30%;
+    transition-delay: 60ms;
+}
+
+.weatherc-gooey .weatherc_blobs div:nth-child(3) {
+    left: 66%;
+    transition-delay: 25ms;
+}
+
+.weatherc-gooey:hover {
+    color: #fff;
+}
+
+.weatherc-gooey:hover .weatherc_blobs div {
+    transform: scale(1.4) translateY(0) translateZ(0);
+}
+
+
 /*LANDING PAGE-------------------*/
 
 
@@ -268,12 +341,12 @@ $btn-color: darken($main-color, 20%);
     padding-top: 10%;
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 15px;
 
     .containercard {
         $background: linear-gradient(to left, $main-color 0%, darken($main-color, 20%) 100%);
-        width: 300px;
-        height: 300px;
+        width: 250px;
+        height: 250px;
         padding: 5px;
         border-radius: 1rem;
         background: $main-color;
@@ -749,8 +822,41 @@ $main-color: #80c6ff;
 
             .skillfront-content {
                 p {
-                    font-size: 32px;
-                    font-weight: 700;
+                    font-size: 80px;
+                    font-weight: 900;
+                    opacity: 1;
+                    background: $main-color;
+                    background-clip: text;
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+                }
+
+                .csharp {
+                    font-size: 100px;
+                    font-weight: 900;
+                    opacity: 1;
+                    background: $main-color;
+                    background-clip: text;
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+                }
+
+                .sql {
+                    font-size: 180px;
+                    font-weight: 900;
+                    opacity: 1;
+                    background: $main-color;
+                    background-clip: text;
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+                }
+
+                .js {
+                    font-size: 120px;
+                    font-weight: 900;
                     opacity: 1;
                     background: $main-color;
                     background-clip: text;

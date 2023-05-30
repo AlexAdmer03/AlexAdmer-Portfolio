@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="~/scss/portfolio-style.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/AlexAdmer-Portfolio.style.css" asp-append-version="true" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
 </head>
 <body>
     <header>
@@ -15,7 +16,7 @@
         <nav class="navbar-container">
             <div class="Navbar-contents">
                 <button class="c-button c-button--gooey" onclick="location.href='#about'">
-                    ABOUT ME
+                    OM MIG
                     <div class="c-button__blobs">
                         <div></div>
                         <div></div>
@@ -33,13 +34,32 @@
                 </svg>
 
                 <button class="c-button c-button--gooey" onclick="location.href='#Projects'">
-                    PROJECTS
+                    PROJEKT
                     <div class="c-button__blobs">
                         <div></div>
                         <div></div>
                         <div></div>
                     </div>
                 </button>
+
+                <svg xmlns="http://www.w3.org/2000/svg" version="1.1" style="display: block; height: 0; width: 0;">
+                    <defs>
+                        <filter id="goo">
+                            <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur"></feGaussianBlur>
+                            <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo"></feColorMatrix>
+                            <feBlend in="SourceGraphic" in2="goo"></feBlend>
+                        </filter>
+                    </defs>
+                </svg>
+                
+                <button class="c-button c-button--gooey" onclick="location.href='#skills'"> MINA KUNSKAPER
+                    <div class="c-button__blobs">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                </button>
+                
                 <svg xmlns="http://www.w3.org/2000/svg" version="1.1" style="display: block; height: 0; width: 0;">
                     <defs>
                         <filter id="goo">
@@ -70,8 +90,8 @@
                     </defs>
                 </svg>
 
-                <button class="c-button c-button--gooey" onclick="location.href='#skills'">
-                    SKILLS
+                <button class="c-button c-button--gooey" onclick="location.href='#References'">
+                    REFERENSER
                     <div class="c-button__blobs">
                         <div></div>
                         <div></div>
@@ -89,16 +109,35 @@
                     </defs>
                 </svg>
                 
-                <button class="c-button c-button--gooey" onclick="location.href='#References'">
-                    REFERENCES
+                <button class="c-button c-button--gooey" onclick="location.href='#Contact'">
+                    KONTAKTA MIG
                     <div class="c-button__blobs">
                         <div></div>
                         <div></div>
                         <div></div>
                     </div>
                 </button>
-                
 
+                <svg xmlns="http://www.w3.org/2000/svg" version="1.1" style="display: block; height: 0; width: 0;">
+                    <defs>
+                        <filter id="goo">
+                            <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur"></feGaussianBlur>
+                            <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo"></feColorMatrix>
+                            <feBlend in="SourceGraphic" in2="goo"></feBlend>
+                        </filter>
+                    </defs>
+                </svg>
+                
+                <div class="weatherc weatherc-gooey">
+                    <div>
+                        VÄDER
+                    </div>
+                    <div class="weatherc_blobs">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                </div>
 
             </div>
         </nav>
