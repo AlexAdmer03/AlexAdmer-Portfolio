@@ -14,28 +14,28 @@
         <div id="Contentcontainer">
             <div class="containercard">
                 <div class="card-info cardbg">
-                    <a href="#" class="glow-button" role="button">OM MIG</a>
+                    <a href="#about" class="glow-button" role="button">OM MIG</a>
                 </div>
 
             </div>
             <div class="containercard">
                 <div class="card-info">
-                    <a href="#" class="glow-button" role="button">PROJEKT</a>
+                    <a href="#Projects" class="glow-button" role="button">PROJEKT</a>
                 </div>
             </div>
             <div class="containercard">
                 <div class="card-info">
-                    <a href="#" class="glow-button" role="button">KUNSKAPER</a>
+                    <a href="#skills" class="glow-button" role="button">KUNSKAPER</a>
                 </div>
             </div>
             <div class="containercard">
                 <div class="card-info">
-                    <a href="#" class="glow-button" role="button">REFERENSER</a>
+                    <a href="#References" class="glow-button" role="button">REFERENSER</a>
                 </div>
             </div>
             <div class="containercard">
                 <div class="card-info">
-                    <a href="#" class="glow-button" role="button">KONTAKTA MIG</a>
+                    <a href="#Contact" class="glow-button" role="button">KONTAKTA MIG</a>
                 </div>
             </div>
         </div>
@@ -113,34 +113,64 @@
         </div>
 
         <div class="projectcontainer">
+            
+            @foreach (var Project in Model.MyProjects)
+            {
+                <div class="card" onClick="openDialog('@Project.ProjectId')">
+                    <div class="card-img-container">
+                        <img class="card-img" src="@Project.Image" />
+                    </div>
+                </div>
 
-            <div class="card">
-                
-                <a href="#modal1" class="modal-trigger">
+                <dialog id="dialog-@Project.ProjectId">
+                    <div class="img-container">
+                        <img src="@Project.Image"/>
+                    </div>
+                    <p class="dialog-title"> @Project.ProjectName</p>
+                    
+                    <div class="buttonrow">
+                        <button class="learn-more">
+                            <span class="circle" aria-hidden="true">
+                                <span class="icon arrow"></span>
+                            </span>
+                            <span class="button-text">OM ARBETET</span>
+                        </button>
+                        <button class="learn-more">
+                            <span class="circle" aria-hidden="true">
+                                <span class="icon arrow"></span>
+                            </span>
+                            <span class="button-text">OM ARBETET</span>
+                        </button>
+                    </div>
+
+                    <button class="close" onClick="closeDialog('@Project.ProjectId')">Close</button>
+                </dialog>
+
+            }
+            
+            
+
+            @* <div class="card">
+
+                <a class="modal-trigger">
                     <div class="card1"></div>
                 </a>
             </div>
 
             <div class="card">
-                <a href="#modal2" class="modal-trigger">
+                <a class="modal-trigger">
                     <div class="card2"></div>
                 </a>
             </div>
 
             <div class="card">
-                <a href="#modal3" class="modal-trigger">
+                <a class="modal-trigger">
                     <div class="card3"></div>
                 </a>
-            </div>
+            </div>*@
 
         </div>
 
-        <div id="modal" class="modal">
-            <!-- Add your project details here -->
-            <h2>Project 1</h2>
-            <p>Description of Project 1</p>
-            <a href="#" class="modal-close">Close</a>
-        </div>
 
 
     </div>
@@ -241,6 +271,26 @@
         <span id="title">Referenser</span>
     </div>
 
+    <div class="reference-text"> Finns På Begäran ;) </div>
+
+    <div class="example-container">
+
+        <div class="card">
+            <div class="img1"></div>
+            <span>Snoop Dogg</span>
+            <p class="info">-EXAMPLE--EXAMPLE--EXAMPLE--EXAMPLE--EXAMPLE--EXAMPLE--EXAMPLE--EXAMPLE--EXAMPLE--EXAMPLE--EXAMPLE--EXAMPLE-</p>
+
+        </div>
+
+        <div class="card">
+            <div class="img2"></div>
+            <span>Kevin Hart</span>
+            <p class="info">-EXAMPLE--EXAMPLE--EXAMPLE--EXAMPLE--EXAMPLE--EXAMPLE--EXAMPLE--EXAMPLE--EXAMPLE--EXAMPLE--EXAMPLE--EXAMPLE-</p>
+
+        </div>
+
+    </div>
+
 </section>
 
 
@@ -249,11 +299,67 @@
         <span id="title">Kontakta Mig</span>
         <span id="title">Kontakta Mig</span>
     </div>
+    <div class="contact-container">
+        <div id="contact-form">
+            <form action="https://formsubmit.co/alex.admer03@gmail.com" method="POST" class="contact-form">
+                <div class="row">
+                    <div class="col">
+                        <input type="text" name="First name" class="form-control" placeholder="First name" id="firstname">
+                    </div>
+                    <div class="col">
+                        <input type="text" name="Second name" class="form-control" placeholder="Last name" id="lastname">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <input type="email" name="Email" class="form-control" placeholder="Email" id="email">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <textarea class="form-control" name="Message" placeholder="Comment" id="comment"></textarea>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col d-flex justify-content-end">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <h4 class="socials-title">Sociala Medier</h4>
+    <div class="socials-container">
 
+        <a href="https://www.instagram.com/alex.admer/" target="_blank" rel="noopener noreferrer">
+            <button class="btn">
+                <i class="bi bi-instagram"></i>
+            </button>
+        </a>
+        
+        <a href="https://www.linkedin.com/in/alex-admer-949b40266/" target="_blank" rel="noopener noreferrer">
+            <button class="btn">
+                <i class="bi bi-linkedin"></i>
+            </button>
+        </a>
+        
+        <a href="https://github.com/AlexAdmer03" target="_blank" rel="noopener noreferrer">
+            <button class="btn">
+                <i class="bi bi-github"></i>
+            </button>
+        </a>
+        
+        
+        <button class="btncv">
+            <i class="bi bi-file-earmark-person"></i>
+            <div class="popup-links">
+                <a class="link-text" href="/assets/external-files/AlexAdmer-CV23.pdf" download="AlexAdmer-CV23.pdf">Ladda Ner CV</a>
+                <a class="link-text" href="https://drive.google.com/file/d/10zTOCzSDjQ0Nse-_Q7xF0xd6mRkpQyMa/view" target="_blank" rel="noopener noreferrer">Förhandsvisa CV</a>
+            </div>
+        </button>
+
+    </div>
 </section>
-
-
-
 
 
 

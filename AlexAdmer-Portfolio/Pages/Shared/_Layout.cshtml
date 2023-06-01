@@ -9,6 +9,9 @@
     <link rel="stylesheet" href="~/AlexAdmer-Portfolio.style.css" asp-append-version="true" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
 </head>
 <body>
     <header>
@@ -129,8 +132,11 @@
                 </svg>
                 
                 <div class="weatherc weatherc-gooey">
-                    <div>
+                    <div class="popup-button">
                         VÄDER
+                        <div class="popup-content">
+                            This is the popup content.
+                        </div>
                     </div>
                     <div class="weatherc_blobs">
                         <div></div>
@@ -157,7 +163,20 @@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+    
+@*DIALOG MODAL*@
+<script>
+    function openDialog(id) {
+        var dialog = document.getElementById('dialog-' + id);
+        dialog.showModal();
+    }
+    
+    function closeDialog(id) {
+        var dialog = document.getElementById('dialog-' + id);
+        dialog.close();
+    }
+</script>
 
-    @await RenderSectionAsync("Scripts", required: false)
+@await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

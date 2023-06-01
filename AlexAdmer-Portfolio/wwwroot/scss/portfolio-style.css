@@ -193,7 +193,8 @@ body::before {
 
 /*WEATHER BUTTON*/
 .weatherc {
-  color: #FFF;
+  color: #000;
+  background-color: #fff;
   font-weight: 900;
   font-size: 12px;
   width: 130px;
@@ -262,6 +263,36 @@ body::before {
   transform: scale(1.4) translateY(0) translateZ(0);
 }
 
+.weatherc {
+  position: relative;
+}
+.weatherc .popup-button {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+.weatherc .popup-button:hover .popup-content {
+  visibility: visible;
+  opacity: 1;
+}
+.weatherc .popup-content {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  bottom: -100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 300px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  color: #333;
+  text-align: center;
+  border-radius: 5px;
+  border: 1px solid #888;
+  z-index: 4;
+  transition: all 0.5s ease;
+}
+
 /*LANDING PAGE-------------------*/
 .NameSign {
   text-align: center;
@@ -316,10 +347,6 @@ body::before {
   display: flex;
   justify-content: center;
   gap: 15px;
-  /*.cardbg{
-      background: url(../assets/img/blurry-BG.jpg) no-repeat;
-      background-size: cover;
-  }*/
 }
 #Contentcontainer .containercard {
   width: 250px;
@@ -611,39 +638,13 @@ body::before {
 .projectcontainer .card:hover {
   box-shadow: 0px 0px 30px 1px #7067b9;
 }
-.projectcontainer .card1 {
+.projectcontainer .card-img {
   width: 400px;
   height: 400px;
-  background: url(../assets/img/Rabbitbank-SS.jpg) no-repeat;
-  background-size: cover;
-  background-position: center;
+  object-fit: cover;
   transition: all 0.2s;
 }
-.projectcontainer .card1:hover {
-  transform: scale(0.95);
-  border-radius: 20px;
-}
-.projectcontainer .card2 {
-  width: 400px;
-  height: 400px;
-  background: url(../assets/img/FixxoSS.jpg) no-repeat;
-  background-size: cover;
-  background-position: center;
-  transition: all 0.2s;
-}
-.projectcontainer .card2:hover {
-  transform: scale(0.95);
-  border-radius: 20px;
-}
-.projectcontainer .card3 {
-  width: 400px;
-  height: 400px;
-  background: url(../assets/img/API-IMAGE.jpg) no-repeat;
-  background-size: cover;
-  background-position: center;
-  transition: all 0.2s;
-}
-.projectcontainer .card3:hover {
+.projectcontainer .card-img:hover {
   transform: scale(0.95);
   border-radius: 20px;
 }
@@ -652,36 +653,119 @@ body::before {
   text-decoration: none;
 }
 
-/*MODAL*/
-.modal {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  visibility: hidden;
-  opacity: 0;
-  background: #fff;
-  padding: 20px;
-  border-radius: 4px;
-  transition: all 0.3s ease-in-out;
-  z-index: 9999;
+/*DIALOG-------------------------*/
+dialog {
+  width: 60%;
+  height: 80%;
+  border: 1px solid #80c6ff;
+  border-radius: 20px;
+  box-shadow: 0px 0px 25px -2px #80c6ff;
+  background: url(../assets/img/blurry-BG.jpg) no-repeat;
+  background-size: cover;
+  /*BUTTON*/
+  /*---------*/
 }
-
-.modal:target {
-  visibility: visible;
-  opacity: 1;
+dialog .img-container {
+  display: flex;
+  justify-content: center;
+  height: 50%;
 }
-
-.modal-close {
+dialog .dialog-title {
+  text-align: center;
+  font-size: 40px;
+}
+dialog .buttonrow {
+  display: flex;
+  justify-content: center;
+}
+dialog .buttonrow button {
+  position: relative;
   display: inline-block;
-  padding: 5px 10px;
-  background: #ccc;
-  color: #333;
-  border-radius: 4px;
+  cursor: pointer;
+  outline: none;
+  border: 0;
+  vertical-align: middle;
   text-decoration: none;
+  background: transparent;
+  padding: 0;
+  font-size: inherit;
+  font-family: inherit;
+}
+dialog .buttonrow button.learn-more {
+  width: 12rem;
+  height: auto;
+}
+dialog .buttonrow button.learn-more .circle {
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  position: relative;
+  display: block;
+  margin: 0;
+  width: 3rem;
+  height: 3rem;
+  background: #282936;
+  border-radius: 1.625rem;
+}
+dialog .buttonrow button.learn-more .circle .icon {
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
   position: absolute;
-  right: 10px;
-  top: 10px;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  background: #fff;
+}
+dialog .buttonrow button.learn-more .circle .icon.arrow {
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  left: 0.625rem;
+  width: 1.125rem;
+  height: 0.125rem;
+  background: none;
+}
+dialog .buttonrow button.learn-more .circle .icon.arrow::before {
+  position: absolute;
+  content: "";
+  top: -0.29rem;
+  right: 0.0625rem;
+  width: 0.625rem;
+  height: 0.625rem;
+  border-top: 0.125rem solid #fff;
+  border-right: 0.125rem solid #fff;
+  transform: rotate(45deg);
+}
+dialog .buttonrow button.learn-more .button-text {
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 0.75rem 0;
+  margin: 0 0 0 1.85rem;
+  color: #282936;
+  font-weight: 700;
+  line-height: 1.6;
+  text-align: center;
+  text-transform: uppercase;
+}
+dialog .buttonrow button:hover .circle {
+  width: 100%;
+}
+dialog .buttonrow button:hover .circle .icon.arrow {
+  background: #fff;
+  transform: translate(1rem, 0);
+}
+dialog .buttonrow button:hover .button-text {
+  color: #fff;
+}
+dialog .close {
+  display: inline-block;
+  justify-content: center;
+  padding: 6px 12px;
+  cursor: pointer;
+  background-color: #f44336;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  margin-top: 20px;
 }
 
 /*SKILLS-----------------*/
@@ -822,6 +906,70 @@ body::before {
   z-index: -1;
 }
 
+.reference-text {
+  text-align: center;
+  padding-top: 10%;
+  font-size: 25px;
+  color: #80c6ff;
+}
+
+.example-container {
+  display: flex;
+  justify-content: center;
+  padding-top: 5%;
+  gap: 20px;
+}
+.example-container .card {
+  width: 17em;
+  height: 22.5em;
+  background: #80c6ff;
+  transition: 1s ease-in-out;
+  clip-path: polygon(30px 0%, 100% 0, 100% calc(100% - 30px), calc(100% - 30px) 100%, 0 100%, 0% 30px);
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  display: flex;
+  flex-direction: column;
+}
+.example-container .card span {
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  display: block;
+  font-size: 1em;
+}
+.example-container .card .info {
+  font-weight: 400;
+  color: white;
+  display: block;
+  text-align: center;
+  font-size: 0.72em;
+  margin: 4em;
+}
+.example-container .card .img1 {
+  width: 150px;
+  height: 150px;
+  background: url(../assets/img/snoopdogg.jpg);
+  background-size: cover;
+  background-position: 50% 15%;
+  border-radius: 15px;
+  margin: auto;
+}
+.example-container .card .img2 {
+  width: 150px;
+  height: 150px;
+  background: url(../assets/img/kevin.jpg);
+  background-size: cover;
+  background-position: 50% 15%;
+  border-radius: 15px;
+  margin: auto;
+}
+.example-container .card .share {
+  margin-top: 1em;
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+}
+
 /*CONTACT----------------------------*/
 #Contact {
   position: relative;
@@ -840,4 +988,119 @@ body::before {
   right: 0;
   position: absolute;
   z-index: -1;
+}
+
+.contact-container {
+  display: flex;
+  justify-content: center;
+  padding-top: 5%;
+}
+.contact-container #contact-form {
+  padding-top: 10%;
+  width: 45vw;
+  height: 45vh;
+  background: url(../assets/img/LandingPage-BG.jpg) no-repeat;
+  background-size: cover;
+  display: grid;
+  justify-content: center;
+}
+.contact-container #contact-form .row {
+  margin-bottom: 20px;
+}
+.contact-container #contact-form .contact-form .form-control {
+  border: 2px solid #80c6ff;
+  box-shadow: 0 0 10px rgba(128, 198, 255, 0.2);
+  color: black;
+  margin: auto;
+}
+.contact-container #contact-form .contact-form .form-control:focus {
+  border-color: #b3ddff;
+  box-shadow: 0 0 10px rgba(179, 221, 255, 0.6);
+}
+.contact-container #contact-form .contact-form .btn-primary {
+  background-color: #80c6ff;
+  border-color: #80c6ff;
+}
+.contact-container #contact-form .contact-form .btn-primary:hover {
+  background-color: #b3ddff;
+  border-color: #b3ddff;
+}
+
+.socials-title {
+  text-align: center;
+  padding-top: 2%;
+  color: #80c6ff;
+  font-size: 30px;
+}
+
+.socials-container {
+  display: flex;
+  justify-content: center;
+  padding-top: 1%;
+  gap: 2%;
+}
+.socials-container .btn {
+  font-size: 25px;
+  border: none;
+  padding: 30px;
+  outline: none;
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  cursor: pointer;
+  background-color: rgb(14, 14, 26);
+  color: rgb(234, 234, 234);
+  font-weight: 900;
+  transition: 0.6s;
+  box-shadow: 0px 0px 60px #1f4c65;
+  -webkit-box-reflect: below -1px linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4));
+}
+.socials-container .btn:active {
+  transform: scale(0.92);
+}
+.socials-container .btn:hover {
+  background: rgb(2, 29, 78);
+  background: linear-gradient(270deg, rgba(2, 29, 78, 0.681) 0%, rgba(31, 215, 232, 0.873) 60%);
+  color: rgb(4, 4, 38);
+}
+.socials-container .btncv {
+  position: relative;
+  font-size: 25px;
+  border: none;
+  padding: 30px;
+  outline: none;
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  cursor: pointer;
+  background-color: rgb(14, 14, 26);
+  color: rgb(234, 234, 234);
+  font-weight: 900;
+  transition: 0.6s;
+  box-shadow: 0px 0px 60px #1f4c65;
+  -webkit-box-reflect: below -1px linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4));
+}
+.socials-container .btncv .popup-links {
+  position: absolute;
+  display: none;
+  background-color: black;
+  color: #000;
+  padding: 3px;
+  border-radius: 5px;
+  top: 50%;
+  right: -150%;
+}
+.socials-container .btncv:hover {
+  background: rgb(2, 29, 78);
+  background: linear-gradient(270deg, rgba(2, 29, 78, 0.681) 0%, rgba(31, 215, 232, 0.873) 60%);
+  color: rgb(4, 4, 38);
+}
+.socials-container .btncv:hover .popup-links {
+  display: block;
+}
+.socials-container .btncv:hover .popup-links .link-text {
+  color: #fff;
+}
+.socials-container .btncv:active {
+  transform: scale(0.92);
 }

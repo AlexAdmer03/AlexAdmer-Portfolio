@@ -27,7 +27,7 @@ namespace PortfolioAPI.Controllers
                 Author = "Alex Admér",
                 PreviewURL = "", //!!!!!!!!!!!!!!!!
                 GithubURL = "https://github.com/AlexAdmer03/RabbitBank",
-                Image = "https://imgur.com/a/BTo5dnF",
+                Image = "https://i.imgur.com/TBSG51r.jpg",
                 Category = "Web applikation",
                 SystemStructure = new SystemStructureModel
                 {
@@ -113,7 +113,7 @@ namespace PortfolioAPI.Controllers
                 Author = "Alex Admér",
                 PreviewURL = "", //!!!!!!!!!!!!!!!!!!!!!!!!!!!
                 GithubURL = "https://github.com/AlexAdmer03/FIXXO-Assignment",
-                Image = "https://imgur.com/a/ARihHFj",
+                Image = "https://i.imgur.com/sgqITC3.jpg",
                 Category = "Frontend projekt",
                 SystemStructure = new SystemStructureModel
                 {
@@ -135,7 +135,7 @@ namespace PortfolioAPI.Controllers
                 Author = "Alex Admér",
                 PreviewURL = "", //!!!!!!!!!!!!!!!!
                 GithubURL = "https://github.com/AlexAdmer03/Api-Advert-assignment/tree/master",
-                Image = "https://imgur.com/a/DFwT1Z7",
+                Image = "https://i.imgur.com/PSm6D5Y.jpg",
                 Category = "API",
                 SystemStructure = new SystemStructureModel
                 {
