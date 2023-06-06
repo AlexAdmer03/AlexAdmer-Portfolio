@@ -473,10 +473,10 @@ body::before {
   box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.705);
   font-size: 30px;
   font-weight: 900;
+  padding: 15px;
 }
 .midcard:hover {
   border-radius: 15px;
-  cursor: pointer;
   box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.705);
   background: rgb(103, 151, 255);
 }
@@ -486,8 +486,9 @@ body::before {
 }
 .midcard:hover .second-content {
   opacity: 1;
-  height: 100%;
-  font-size: 1.8rem;
+  height: auto;
+  font-size: 15px;
+  color: #fff;
   transform: rotate(0deg);
 }
 .midcard .first-content {
@@ -501,7 +502,7 @@ body::before {
   border-radius: 15px;
 }
 .midcard .second-content {
-  height: 0%;
+  height: 0;
   width: 100%;
   opacity: 0;
   display: flex;
@@ -511,6 +512,9 @@ body::before {
   transition: all 0.4s;
   font-size: 0px;
   transform: rotate(90deg) scale(-1);
+  padding: 15px;
+  overflow: auto;
+  text-align: justify;
 }
 
 /*1st 3nd*/
@@ -558,7 +562,6 @@ body::before {
   padding: 20px;
   line-height: 1.5;
   border-radius: 5px;
-  pointer-events: none;
   transform: translateY(96%);
 }
 .card-container .card .content .heading {
@@ -660,7 +663,7 @@ dialog {
   border: 1px solid #80c6ff;
   border-radius: 20px;
   box-shadow: 0px 0px 25px -2px #80c6ff;
-  background: url(../assets/img/blurry-BG.jpg) no-repeat;
+  background: url(../assets/img/blurry-BG-light.jpg) no-repeat;
   background-size: cover;
   /*BUTTON*/
   /*---------*/
@@ -1103,4 +1106,50 @@ dialog .close {
 }
 .socials-container .btncv:active {
   transform: scale(0.92);
+}
+
+.footer-container {
+  background-color: black;
+  border-top: 2px solid #80c6ff;
+  box-shadow: 0px 0px 25px -2px #80c6ff;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 2;
+}
+
+.footer-contents {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 0px;
+  font-weight: 700;
+  font-size: 22px;
+  color: #FFF1F4;
+}
+
+.button-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.back-to-top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 15px;
+  font-weight: 700;
+  color: #fff;
+  background: rgb(58, 165, 253);
+  cursor: pointer;
+  padding: 10px 20px;
+  transition: all 0.8s;
+  border: 2px solid #80c6ff;
+  border-radius: 6px;
+  text-decoration: none;
+}
+
+.back-to-top:hover {
+  transform: scale(1.1);
 }

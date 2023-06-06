@@ -25,7 +25,7 @@ namespace PortfolioAPI.Controllers
                     " Det är ett verktyg för administration av banksystem implementerat med ASP.NET Core." +
                     " Det möjliggör effektiv hantering av bankkunder, deras konton, saldon och transaktioner.",
                 Author = "Alex Admér",
-                PreviewURL = "", //!!!!!!!!!!!!!!!!
+                PreviewURL = "https://rabbitbank.azurewebsites.net/",
                 GithubURL = "https://github.com/AlexAdmer03/RabbitBank",
                 Image = "https://i.imgur.com/TBSG51r.jpg",
                 Category = "Web applikation",

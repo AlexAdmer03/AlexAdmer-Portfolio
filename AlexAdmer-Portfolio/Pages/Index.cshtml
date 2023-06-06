@@ -56,27 +56,45 @@
             <div class="card-container">
                 <div class="card">
                     <div class="front-content">
-                        <p>Hover me</p>
+                        <p>Sociala Medier</p>
                     </div>
                     <div class="content">
-                        <p class="heading">Card Hover</p>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipii
-                            voluptas ten mollitia pariatur odit, ab
-                            minus ratione adipisci accusamus vel est excepturi laboriosam magnam
-                            necessitatibus dignissimos molestias.
-                        </p>
+                        <p class="heading">Sociala Medier</p>
+                        <div class="socials-container">
+
+                            <a href="https://www.instagram.com/alex.admer/" target="_blank" rel="noopener noreferrer">
+                                <button class="btn">
+                                    <i class="bi bi-instagram"></i>
+                                </button>
+                            </a>
+
+                            <a href="https://www.linkedin.com/in/alex-admer-949b40266/" target="_blank" rel="noopener noreferrer">
+                                <button class="btn">
+                                    <i class="bi bi-linkedin"></i>
+                                </button>
+                            </a>
+
+                            <a href="https://github.com/AlexAdmer03" target="_blank" rel="noopener noreferrer">
+                                <button class="btn">
+                                    <i class="bi bi-github"></i>
+                                </button>
+                            </a>
+
+                        </div>
                     </div>
                 </div>
             </div>
 
             @*2*@
             <div class="midcard">
-                <div class="first-content">
-                    <span></span>
-                </div>
+                <div class="first-content"></div>
                 <div class="second-content">
-                    <span>benim e single walla... 072 965 65 59</span>
+                    <p>
+                        Välkommen till min hemsida! Jag är en hängiven .NET-utvecklarstudent vid KYH i Stockholm, med en djup passion för teknik, data och IT.
+                        Jag ser alltid fram emot att lära mig nya koncept och tekniker inom programmering, eftersom jag ständigt strävar efter att utveckla mina färdigheter och bredda min kunskapsbas.
+                        Vid sidan av min utbildning älskar jag att utmana mig själv fysiskt genom träning och sport, vilket ger mig balans och disciplin som hjälper mig att hålla mig fokuserad på mitt arbete.
+                        Är du intresserad av att veta mer om mina projekt eller diskutera möjliga samarbeten? Bläddra igenom mina portfolier eller kontakta mig. Jag ser fram emot att ansluta och lära mig från er alla.
+                    </p>
                 </div>
             </div>
 
@@ -84,16 +102,24 @@
             <div class="card-container">
                 <div class="card">
                     <div class="front-content">
-                        <p>Hover me</p>
+                        <p>Kontakt information</p>
                     </div>
                     <div class="content">
-                        <p class="heading">Card Hover</p>
+                        <p class="heading">Kontakt information</p>
                         <p>
-                            Lorem ipsum dolor sit amet, consectetur adipii
-                            voluptas ten mollitia pariatur odit, ab
-                            minus ratione adipisci accusamus vel est excepturi laboriosam magnam
-                            necessitatibus dignissimos molestias.
-                        </p>
+                            Email: Alex.admer03@gmail.com
+                        <p>Mobilnummer: +46 729656559</p>
+                        <p> CV:</p>
+                        <div class="socials-container">
+                            <button class="btncv">
+                                <i class="bi bi-file-earmark-person"></i>
+                                <div class="popup-links">
+                                    <a class="link-text" href="/assets/external-files/AlexAdmer-CV23.pdf" download="AlexAdmer-CV23.pdf">Ladda Ner CV</a>
+                                    <a class="link-text" href="https://drive.google.com/file/d/10zTOCzSDjQ0Nse-_Q7xF0xd6mRkpQyMa/view" target="_blank" rel="noopener noreferrer">Förhandsvisa CV</a>
+                                </div>
+                            </button>
+                        </div>
+
                     </div>
                 </div>
             </div>
@@ -113,7 +139,7 @@
         </div>
 
         <div class="projectcontainer">
-            
+
             @foreach (var Project in Model.MyProjects)
             {
                 <div class="card" onClick="openDialog('@Project.ProjectId')">
@@ -124,54 +150,72 @@
 
                 <dialog id="dialog-@Project.ProjectId">
                     <div class="img-container">
-                        <img src="@Project.Image"/>
+                        <img src="@Project.Image" />
                     </div>
                     <p class="dialog-title"> @Project.ProjectName</p>
-                    
+
                     <div class="buttonrow">
-                        <button class="learn-more">
-                            <span class="circle" aria-hidden="true">
-                                <span class="icon arrow"></span>
-                            </span>
-                            <span class="button-text">OM ARBETET</span>
-                        </button>
-                        <button class="learn-more">
-                            <span class="circle" aria-hidden="true">
-                                <span class="icon arrow"></span>
-                            </span>
-                            <span class="button-text">OM ARBETET</span>
-                        </button>
+                        <a href="@Project.PreviewURL" target="_blank">
+                            <button class="learn-more">
+                                <span class="circle" aria-hidden="true">
+                                    <span class="icon arrow"></span>
+                                </span>
+                                <span class="button-text">Preview</span>
+                            </button>
+                        </a>
+
+                        <a href="@Project.GithubURL" target="_blank">
+                            <button class="learn-more">
+                                <span class="circle" aria-hidden="true">
+                                    <span class="icon arrow"></span>
+                                </span>
+                                <span class="button-text">GitHub</span>
+                            </button>
+                        </a>
+                    </div>
+
+                    <div class="info-container">
+
+                        <details>
+                            <summary>Start Datum</summary>
+                            <p>@Project.CreatedDate.ToString("yyyy-MM-dd")</p>
+                        </details>
+
+                        <details>
+                            <summary>Senast Uppdaterad</summary>
+                            <p>@Project.LastUptade.ToString("yyyy-MM-dd")</p>
+                        </details>
+
+                        <details>
+                            <summary>Beskrivning</summary>
+                            <p>@Project.Description</p>
+                        </details>
+
+                        <details>
+                            <summary>Skapare</summary>
+                            <p>@Project.Author</p>
+                        </details>
+
+                        <details>
+                            <summary>Kategori</summary>
+                            <p>@Project.Category</p>
+                        </details>
+                        <details>
+                            <summary>Program Språk</summary>
+                            @foreach (var languange in Project.SystemStructure.ProgrammingLanguages)
+                            {
+                                <p>@languange</p>
+                            }
+                        </details>
+
                     </div>
 
                     <button class="close" onClick="closeDialog('@Project.ProjectId')">Close</button>
                 </dialog>
 
             }
-            
-            
-
-            @* <div class="card">
-
-                <a class="modal-trigger">
-                    <div class="card1"></div>
-                </a>
-            </div>
-
-            <div class="card">
-                <a class="modal-trigger">
-                    <div class="card2"></div>
-                </a>
-            </div>
-
-            <div class="card">
-                <a class="modal-trigger">
-                    <div class="card3"></div>
-                </a>
-            </div>*@
 
         </div>
-
-
 
     </div>
 </section>
@@ -271,7 +315,7 @@
         <span id="title">Referenser</span>
     </div>
 
-    <div class="reference-text"> Finns På Begäran ;) </div>
+    <div class="reference-text"> Finns På Begäran </div>
 
     <div class="example-container">
 
@@ -304,10 +348,10 @@
             <form action="https://formsubmit.co/alex.admer03@gmail.com" method="POST" class="contact-form">
                 <div class="row">
                     <div class="col">
-                        <input type="text" name="First name" class="form-control" placeholder="First name" id="firstname">
+                        <input type="text" name="First name" class="form-control" placeholder="För- Namn" id="firstname">
                     </div>
                     <div class="col">
-                        <input type="text" name="Second name" class="form-control" placeholder="Last name" id="lastname">
+                        <input type="text" name="Second name" class="form-control" placeholder="Efter- Namn" id="lastname">
                     </div>
                 </div>
                 <div class="row">
@@ -317,12 +361,12 @@
                 </div>
                 <div class="row">
                     <div class="col">
-                        <textarea class="form-control" name="Message" placeholder="Comment" id="comment"></textarea>
+                        <textarea class="form-control" name="Message" placeholder="Kommentar" id="comment"></textarea>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col d-flex justify-content-end">
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <button type="submit" class="btn btn-primary">Skicka</button>
                     </div>
                 </div>
             </form>
@@ -336,20 +380,20 @@
                 <i class="bi bi-instagram"></i>
             </button>
         </a>
-        
+
         <a href="https://www.linkedin.com/in/alex-admer-949b40266/" target="_blank" rel="noopener noreferrer">
             <button class="btn">
                 <i class="bi bi-linkedin"></i>
             </button>
         </a>
-        
+
         <a href="https://github.com/AlexAdmer03" target="_blank" rel="noopener noreferrer">
             <button class="btn">
                 <i class="bi bi-github"></i>
             </button>
         </a>
-        
-        
+
+
         <button class="btncv">
             <i class="bi bi-file-earmark-person"></i>
             <div class="popup-links">

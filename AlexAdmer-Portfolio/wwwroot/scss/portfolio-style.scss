@@ -524,10 +524,10 @@ $btn-color: darken($main-color, 20%);
     box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.705);
     font-size: 30px;
     font-weight: 900;
+    padding: 15px; 
 
     &:hover {
         border-radius: 15px;
-        cursor: pointer;
         box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.705);
         background: rgb(103, 151, 255);
 
@@ -538,8 +538,9 @@ $btn-color: darken($main-color, 20%);
 
         .second-content {
             opacity: 1;
-            height: 100%;
-            font-size: 1.8rem;
+            height: auto; 
+            font-size: 15px;
+            color: #fff;
             transform: rotate(0deg);
         }
     }
@@ -556,7 +557,7 @@ $btn-color: darken($main-color, 20%);
     }
 
     .second-content {
-        height: 0%;
+        height: 0;
         width: 100%;
         opacity: 0;
         display: flex;
@@ -566,6 +567,9 @@ $btn-color: darken($main-color, 20%);
         transition: all 0.4s;
         font-size: 0px;
         transform: rotate(90deg) scale(-1);
+        padding: 15px; // Add padding for the text content
+        overflow: auto; // Make sure the content scrolls if it's larger than the container
+        text-align: justify; // Justify the text for better readability
     }
 }
 
@@ -621,7 +625,6 @@ $main-color: #80c6ff;
             padding: 20px;
             line-height: 1.5;
             border-radius: 5px;
-            pointer-events: none;
             transform: translateY(96%);
 
             .heading {
@@ -743,7 +746,7 @@ dialog {
     border: 1px solid #80c6ff;
     border-radius: 20px;
     box-shadow: 0px 0px 25px -2px #80c6ff;
-    background: url(../assets/img/blurry-BG.jpg) no-repeat;
+    background: url(../assets/img/blurry-BG-light.jpg) no-repeat;
     background-size: cover;
 
     .img-container {
@@ -850,6 +853,8 @@ dialog {
         }
     }
     /*---------*/
+
+    
 
 
     .close {
@@ -1228,10 +1233,10 @@ dialog {
             display: none;
             background-color: black;
             color: #000;
-            padding: 3px; // reduce padding to make the div smaller
+            padding: 3px; 
             border-radius: 5px;
-            top: 50%; // align the top of the div with the middle of the button
-            right: -150%; // move the div to the right of the button
+            top: 50%;
+            right: -150%;
         }
 
         &:hover {
@@ -1254,3 +1259,48 @@ dialog {
     }
 }
 
+.footer-container {
+    background-color: black;
+    border-top: 2px solid #80c6ff;
+    box-shadow: 0px 0px 25px -2px #80c6ff;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 2;
+}
+
+.footer-contents {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 0px;
+    font-weight: 700;
+    font-size: 22px;
+    color: #FFF1F4;
+}
+
+.button-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.back-to-top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+    font-weight: 700;
+    color: #fff;
+    background: rgb(58, 165, 253);
+    cursor: pointer;
+    padding: 10px 20px;
+    transition: all .8s;
+    border: 2px solid #80c6ff;
+    border-radius: 6px;
+    text-decoration: none;
+}
+
+.back-to-top:hover {
+    transform: scale(1.1);
+}
