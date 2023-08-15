@@ -511,7 +511,7 @@ $btn-color: darken($main-color, 20%);
     gap: 10px;
 }
 
-/*2st*/
+/*2nd*/
 
 .midcard {
     width: 420px;
@@ -567,9 +567,9 @@ $btn-color: darken($main-color, 20%);
         transition: all 0.4s;
         font-size: 0px;
         transform: rotate(90deg) scale(-1);
-        padding: 15px; // Add padding for the text content
-        overflow: auto; // Make sure the content scrolls if it's larger than the container
-        text-align: justify; // Justify the text for better readability
+        padding: 15px; 
+        overflow: auto; 
+        text-align: justify; 
     }
 }
 
@@ -1035,18 +1035,20 @@ dialog {
 }
 
 
-.reference-text {
-    text-align: center;
-    padding-top: 10%;
-    font-size: 25px;
-    color: #80c6ff;
-}
 
 .example-container {
     display: flex;
     justify-content: center;
     padding-top: 5%;
     gap: 20px;
+
+    .reference-text {
+        text-align: center;
+        padding-right: 10%;
+        padding-left: 10%;
+        font-size: 25px;
+        color: #80c6ff;
+    }
 
     .card {
         width: 17em;
@@ -1304,3 +1306,7 @@ dialog {
 .back-to-top:hover {
     transform: scale(1.1);
 }
+
+
+/*Responsive*/
+

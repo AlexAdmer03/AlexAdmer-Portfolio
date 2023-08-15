@@ -461,7 +461,7 @@ body::before {
   gap: 10px;
 }
 
-/*2st*/
+/*2nd*/
 .midcard {
   width: 420px;
   height: 420px;
@@ -909,18 +909,18 @@ dialog .close {
   z-index: -1;
 }
 
-.reference-text {
-  text-align: center;
-  padding-top: 10%;
-  font-size: 25px;
-  color: #80c6ff;
-}
-
 .example-container {
   display: flex;
   justify-content: center;
   padding-top: 5%;
   gap: 20px;
+}
+.example-container .reference-text {
+  text-align: center;
+  padding-right: 10%;
+  padding-left: 10%;
+  font-size: 25px;
+  color: #80c6ff;
 }
 .example-container .card {
   width: 17em;
@@ -1153,3 +1153,5 @@ dialog .close {
 .back-to-top:hover {
   transform: scale(1.1);
 }
+
+/*Responsive*/
